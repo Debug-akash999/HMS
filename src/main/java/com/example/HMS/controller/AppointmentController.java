@@ -56,13 +56,10 @@ public class AppointmentController {
     public ResponseEntity<Appointment> getById(@PathVariable Long id) {
         return ResponseEntity.ok(serr.getById(id));
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id) {
-        boolean deleted = serr.deleteById(id);
-        if (deleted) {
-            return ResponseEntity.noContent().build(); // 204 No Content
-        } else {
-            return ResponseEntity.notFound().build(); // 404 Not Found
-        }
+        serr.deleteById(id); // throws exception if not found
+        return ResponseEntity.noContent().build(); // 204 No Content
     }
 }
