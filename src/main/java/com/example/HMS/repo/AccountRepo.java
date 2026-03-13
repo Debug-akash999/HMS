@@ -1,4 +1,7 @@
 package com.example.HMS.repo;
 
-public interface AccountRepo {
+import com.example.HMS.model.Account;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AccountRepo extends JpaRepository<Account,Long> {
 }

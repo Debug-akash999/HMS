@@ -1,4 +1,4 @@
-package com.example.HMS.config;
+package com.example.HMS.SeurityConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,9 +12,9 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .csrf(csrf -> csrf.disable())   // disable csrf
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll()   // allow all endpoints
+                        .anyRequest().permitAll()
                 );
 
         return http.build();

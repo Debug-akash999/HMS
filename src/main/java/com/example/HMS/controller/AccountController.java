@@ -29,6 +29,7 @@ public class AccountController {
     }
     @GetMapping("/{id}")
     public ResponseEntity<Account> getById(@PathVariable Long id){
+
         return ResponseEntity.ok(ser.getById(id));
     }
 
